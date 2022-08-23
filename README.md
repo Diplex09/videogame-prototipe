@@ -17,6 +17,8 @@ Some references are :
 
 
 ## Team
--Aldo Alejandro Degollado - Programmer & Game Designer.
--David Andres De La Llave - Visual Artist, Programmer & Animator.
--Diego Velázquez Moreno - Programmer & Sound Designer.
+ - Aldo Alejandro Degollado - Programmer & Game Designer.
+
+ - David Andres De La Llave - Visual Artist, Programmer & Animator.
+
+ - Diego Velázquez Moreno - Programmer & Sound Designer.
