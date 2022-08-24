@@ -12,7 +12,7 @@ The game is going to be a combat multiplatform 3d game. The game is it going to 
 Some references are :
 - Super Mario 64
 - Psychonauts 2
-- A Hay in Time
+- A Hat in Time
 - Demon Turf
 - Neon Abyss
 - Katana ZERO
