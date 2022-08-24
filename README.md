@@ -10,15 +10,15 @@ The enemies are going to be diverse. There wil be small hordes of enemies, bosse
 The game is going to be a combat multiplatform 3d game. The game is it going to be located on a neon Japanese city with some futuristic details.
 
 Some references are :
-....
-....
-....
-...
+- Super Mario 64
+- Psychonauts 2
+- A Hay in Time
+- Demon Turf
+- Neon Abyss
+- Katana ZERO
 
 
 ## Team
- - Aldo Alejandro Degollado - Programmer & Game Designer.
-
- - David Andres De La Llave - Visual Artist, Programmer & Animator.
-
- - Diego Velázquez Moreno - Programmer & Sound Designer.
+- [Aldo Degollado](https://github.com/Diplex09): `Programmer` / `Game Designer`
+- [David De La Llave](https://github.com/David12081): `Visual Artist` / `Programmer` / `Animator`.
+- [Diego Velázquez](https://github.com/DiegoVelazqz): `Programmer` / `Sound Designer`
