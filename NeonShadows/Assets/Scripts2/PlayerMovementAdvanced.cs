@@ -202,6 +202,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         else if (sliding)
         {
             state = MovementState.sliding;
+            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
 
             // increase speed by one every second
             if (OnSlope() && rb.velocity.y < 0.1f)
