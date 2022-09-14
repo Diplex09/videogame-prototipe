@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Cinemachine;
 
 public class PlayerCam : MonoBehaviour
 {
@@ -14,10 +15,15 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    public CinemachineFreeLook freeLook;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        freeLook.m_XAxis.m_MaxSpeed = sensX;
+        freeLook.m_YAxis.m_MaxSpeed = sensY;
     }
 
     private void Update()
