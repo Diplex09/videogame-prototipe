@@ -102,7 +102,7 @@ public class Climbing : MonoBehaviour
 
         bool newWall = frontWallHit.transform != lastWall || Mathf.Abs(Vector3.Angle(lastWallNormal, frontWallHit.normal)) > minWallNormalAngleChange;
 
-        if ((wallFront && newWall) || pm.grounded)
+        if ((wallFront && newWall) || pm.Grounded)
         {
             climbTimer = maxClimbTime;
             climbJumpsLeft = climbJumps;
@@ -138,7 +138,7 @@ public class Climbing : MonoBehaviour
 
     private void ClimbJump()
     {
-        if (pm.grounded) return;
+        if (pm.Grounded) return;
         if (lg.holding || lg.exitingLedge) return;
 
         print("climbjump");
