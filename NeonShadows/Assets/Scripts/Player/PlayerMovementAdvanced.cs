@@ -22,7 +22,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         }
     }
     */ 
-    
+
     [SerializeField] private float _sprintSpeed;
     [SerializeField] private float _slideSpeed;
     [SerializeField] private float _wallrunSpeed;
