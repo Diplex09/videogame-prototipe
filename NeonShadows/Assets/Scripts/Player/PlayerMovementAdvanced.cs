@@ -11,7 +11,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
     [SerializeField] private float _desiredMoveSpeed;
     [SerializeField] private float _lastDesiredMoveSpeed;
     [SerializeField] private float _walkSpeed;
-    public float WalkSpeed {
+    
+    /* public float WalkSpeed {
         get => _walkSpeed;
         set{
             _walkSpeed = value;
@@ -20,6 +21,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
             }
         }
     }
+    */ 
     [SerializeField] private float _sprintSpeed;
     [SerializeField] private float _slideSpeed;
     [SerializeField] private float _wallrunSpeed;
