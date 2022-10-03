@@ -81,7 +81,7 @@ public class ClimbingDone : MonoBehaviour
     bool vaultPerformed;
     bool midCheck;
     bool feetCheck;
-
+    bool touchingLedge;
 
     private void Update()
     {
@@ -288,7 +288,6 @@ public class ClimbingDone : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
-    bool touchingLedge;
     private void FreezeRigidbodyOnLedge()
     {
         Vector3 directionToLedge = currLedge.position - transform.position;
