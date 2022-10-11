@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4432,7 +4432,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417203321}
-  m_LocalRotation: {x: 0.09252102, y: -0.000000017659858, z: 0.0000000016409465, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: 0.000000017659856, z: -0.0000000016409463, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6511,6 +6511,7 @@ GameObject:
   - component: {fileID: 4521355870672122223}
   - component: {fileID: 4521355870672122222}
   - component: {fileID: 4521355870672122196}
+  - component: {fileID: 4521355870672122226}
   - component: {fileID: 1375424249}
   - component: {fileID: 1375424248}
   - component: {fileID: 1375424246}
@@ -6519,6 +6520,7 @@ GameObject:
   - component: {fileID: 1375424244}
   - component: {fileID: 1375424243}
   - component: {fileID: 4521355870672122224}
+  - component: {fileID: 4521355870672122225}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -6573,6 +6575,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   textHealth: {fileID: 922387649}
+--- !u!114 &4521355870672122225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4521355870672122220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20800323080c0c41a1749b369fc5a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 4521355870672122226}
+  _coolDownTime: 0.8
+--- !u!95 &4521355870672122226
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4521355870672122220}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7cfc11cb442dd54419b0dbd85c9b9618, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &4521355871031765236
 Transform:
   m_ObjectHideFlags: 0
