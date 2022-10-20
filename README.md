@@ -1,4 +1,4 @@
-# Neon Shadow videogame-prototipe
+# Neon Shadows videogame-prototipe
 
 This repository is going to be used for the development of a multiplataform 3d game. The game will be created on unity and we are going to use maya to model some of the resources of the game.
 
