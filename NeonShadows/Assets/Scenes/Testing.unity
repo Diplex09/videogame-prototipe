@@ -2748,8 +2748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f7608b1a0454e41b11620255c143d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 1500
-  sensY: 25
+  sensX: 2000
+  sensY: 30
   orientation: {fileID: 4521355871085208330}
   camHolder: {fileID: 1374801706}
   freeLook: {fileID: 115971320}
@@ -2770,11 +2770,6 @@ MonoBehaviour:
   playerObj: {fileID: 4521355872343693051}
   rb: {fileID: 4521355870672122222}
   rotationSpeed: 50
-  combatLookAt: {fileID: 0}
-  thirdPersonCam: {fileID: 115971319}
-  combatCam: {fileID: 1958886173}
-  topDownCam: {fileID: 2130826757}
-  currentStyle: 0
 --- !u!1 &1024176920
 GameObject:
   m_ObjectHideFlags: 0
@@ -5760,7 +5755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031845953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.65, y: 10.96, z: -0.77}
+  m_LocalPosition: {x: 47.65, y: 10.96, z: 1.17}
   m_LocalScale: {x: 15, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
