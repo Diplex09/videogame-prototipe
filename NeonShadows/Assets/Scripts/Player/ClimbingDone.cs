@@ -81,7 +81,6 @@ public class ClimbingDone : MonoBehaviour
     bool vaultPerformed;
     bool midCheck;
     bool feetCheck;
-    bool touchingLedge;
 
     private void Update()
     {
@@ -337,22 +336,6 @@ public class ClimbingDone : MonoBehaviour
     private void ResetLastLedge()
     {
         lastLedge = null;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "Ledge")
-        {
-            touchingLedge = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.transform.tag == "Ledge")
-        {
-            touchingLedge = false;
-        }
     }
 
     private void OnDrawGizmos()
