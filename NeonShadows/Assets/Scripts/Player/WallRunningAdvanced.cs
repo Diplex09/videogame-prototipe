@@ -43,14 +43,14 @@ public class WallRunningAdvanced : MonoBehaviour
     [Header("References")]
     public Transform orientation;
     public PlayerCam cam;
-    private PlayerMovementAdvanced pm;
+    private PlayerMovementAdvanced playerMovementAdv;
     private LedgeGrabbing lg;
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovementAdvanced>();
+        playerMovementAdv = GetComponent<PlayerMovementAdvanced>();
         lg = GetComponent<LedgeGrabbing>();
     }
 
@@ -62,7 +62,7 @@ public class WallRunningAdvanced : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (pm.wallrunning)
+        if (playerMovementAdv.wallrunning)
             WallRunningMovement();
     }
 
@@ -89,14 +89,14 @@ public class WallRunningAdvanced : MonoBehaviour
         // State 1 - Wallrunning
         if ((wallLeft || wallRight) && verticalInput > 0 && AboveGround() && !exitingWall)
         {
-            if (!pm.wallrunning)
+            if (!playerMovementAdv.wallrunning)
                 StartWallRun();
 
             // wallrun timer
             if (wallRunTimer > 0)
                 wallRunTimer -= Time.deltaTime;
 
-            if (wallRunTimer <= 0 && pm.wallrunning)
+            if (wallRunTimer <= 0 && playerMovementAdv.wallrunning)
             {
                 exitingWall = true;
                 exitWallTimer = exitWallTime;
@@ -109,7 +109,7 @@ public class WallRunningAdvanced : MonoBehaviour
         // State 2 - Exiting
         else if (exitingWall)
         {
-            if (pm.wallrunning)
+            if (playerMovementAdv.wallrunning)
                 StopWallRun();
 
             if (exitWallTimer > 0)
@@ -122,14 +122,14 @@ public class WallRunningAdvanced : MonoBehaviour
         // State 3 - None
         else
         {
-            if (pm.wallrunning)
+            if (playerMovementAdv.wallrunning)
                 StopWallRun();
         }
     }
 
     private void StartWallRun()
     {
-        pm.wallrunning = true;
+        playerMovementAdv.wallrunning = true;
 
         wallRunTimer = maxWallRunTime;
 
@@ -173,7 +173,7 @@ public class WallRunningAdvanced : MonoBehaviour
 
     private void StopWallRun()
     {
-        pm.wallrunning = false;
+        playerMovementAdv.wallrunning = false;
 
         // reset camera effects
         if (cam == null) return;

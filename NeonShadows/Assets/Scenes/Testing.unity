@@ -2748,8 +2748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f7608b1a0454e41b11620255c143d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 1000
-  sensY: 10
+  sensX: 1500
+  sensY: 25
   orientation: {fileID: 4521355871085208330}
   camHolder: {fileID: 1374801706}
   freeLook: {fileID: 115971320}
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   playerObj: {fileID: 4521355872343693051}
   rb: {fileID: 4521355870672122222}
   rotationSpeed: 50
-  combatLookAt: {fileID: 4521355872510504211}
+  combatLookAt: {fileID: 0}
   thirdPersonCam: {fileID: 115971319}
   combatCam: {fileID: 1958886173}
   topDownCam: {fileID: 2130826757}
@@ -3377,7 +3377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256565351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.65, y: 10.96, z: 13.93}
+  m_LocalPosition: {x: 47.65, y: 10.96, z: 7.96}
   m_LocalScale: {x: 15, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3812,10 +3812,10 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  wallRunForce: 200
-  wallJumpUpForce: 7
-  wallJumpSideForce: 14
-  wallClimbSpeed: 3
+  wallRunForce: 500
+  wallJumpUpForce: 20
+  wallJumpSideForce: 20
+  wallClimbSpeed: 10
   maxWallRunTime: 0.5
   jumpKey: 32
   upwardsRunKey: 304
@@ -3876,10 +3876,10 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 256
-  climbSpeed: 10
+  climbSpeed: 15
   maxClimbTime: 0.5
-  climbJumpUpForce: 14
-  climbJumpBackForce: 12
+  climbJumpUpForce: 20
+  climbJumpBackForce: 22
   jumpKey: 32
   climbJumps: 1
   detectionLength: 0.7
@@ -3913,7 +3913,7 @@ MonoBehaviour:
   _speedIncreaseMultiplier: 1.5
   _slopeIncreaseMultiplier: 2.5
   _groundDrag: 4
-  _jumpForce: 8
+  _jumpForce: 22
   _jumpCooldown: 0.25
   _airMultiplier: 0.4
   _crouchSpeed: 3.5
@@ -4432,7 +4432,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417203321}
-  m_LocalRotation: {x: 0.09252102, y: 0.000000017659856, z: -0.0000000016409463, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: -0.000000017659858, z: 0.0000000016409465, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5566,7 +5566,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 4521355872510504211}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 4521355870672122223}
   m_CommonLens: 1
   m_Lens:
@@ -6657,8 +6657,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4521355872510504211}
+  m_Children: []
   m_Father: {fileID: 4521355870672122223}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6858,37 +6857,6 @@ Transform:
   m_Children:
   - {fileID: 4521355871031765236}
   m_Father: {fileID: 4521355870672122223}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4521355872510504208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4521355872510504211}
-  m_Layer: 0
-  m_Name: CombatLookAt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4521355872510504211
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4521355872510504208}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4521355871085208330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6967944281355005311
