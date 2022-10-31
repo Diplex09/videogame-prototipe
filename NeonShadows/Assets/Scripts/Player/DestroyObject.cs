@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class DestroyObject : MonoBehaviour
 {
-    [SerializeField] private float _delay = 1f;
+    [SerializeField] private float _delay = 0.1f;
     [SerializeField] private UnityEvent OnDestroy;
 
     public void DestroyWithDelay() {
