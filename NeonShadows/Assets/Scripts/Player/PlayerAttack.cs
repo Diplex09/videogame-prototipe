@@ -8,6 +8,11 @@ public class PlayerAttack : MonoBehaviour
     private int _combo;
     private bool _attacking;
 
+    public bool Attacking {
+        get => _attacking;
+        set => _attacking = value;
+    }
+
     private void Update()
     {
         Combos();

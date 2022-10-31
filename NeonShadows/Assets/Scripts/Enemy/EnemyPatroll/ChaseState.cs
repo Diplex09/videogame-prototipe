@@ -8,7 +8,5 @@ public class ChaseState : StateMachineBehaviour
         EnemyPatrollAI enemyPatrollAI = animator.gameObject.GetComponent<EnemyPatrollAI>();
         enemyPatrollAI.SetPlayerAsTarget();
         enemyPatrollAI.SetSpeed(15f); // Set chase speed
-
-        animator.SetBool("isPlayerAsTarget", true);
     }
 }

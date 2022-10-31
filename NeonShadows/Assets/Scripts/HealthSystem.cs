@@ -1,34 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthSystem : MonoBehaviour
 {
-    private int health;
-    private int healthMax;
+    [SerializeField] private int _currentHealth;
+    [SerializeField] private int _maxHealth;
+    [SerializeField] private UnityEvent<int> OnReceiveDamage;
+    [SerializeField] private UnityEvent OnZeroHealth;
+    [SerializeField] private UnityEvent<int> OnReceiveHealth;
 
-    public HealthSystem(int healthMax) {
-        this.healthMax = healthMax;
-        health = healthMax;
+    public void Start() {
+        _currentHealth = _maxHealth;
     }
 
-    public int GetHealth(){
-        return health;
+    public int CurrentHealth {
+        get => _currentHealth; 
+        set => _currentHealth = value;
     }
 
-    public void Damage(int damageAmount){
+    public int MaxHealth {
+        get => _maxHealth; 
+        set => _maxHealth = value;
+    }
+
+    public void ReceiveDamage(int damageAmount) {
         
-        health = health - damageAmount; 
-        if (health <= 0) {
-            health = 0 ;
+        _currentHealth -= damageAmount;
+        OnReceiveDamage?.Invoke(CurrentHealth);
+        if (CurrentHealth <= 0){
+            OnZeroHealth?.Invoke();
         }
     }
 
-    public void Heal(int healAmount){
-        health = health + healAmount;
-        if (health > healthMax) {
-            health = healthMax;
-        }
+    public void GainHealth(int gainAmount) {
+        _currentHealth += gainAmount;
+        _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
+        OnReceiveHealth?.Invoke(CurrentHealth);
     }
 
 }
