@@ -10,9 +10,12 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private UnityEvent<int> OnReceiveDamage;
     [SerializeField] private UnityEvent OnZeroHealth;
     [SerializeField] private UnityEvent<int> OnReceiveHealth;
+    //public HealthBar healthBar;
 
     public void Start() {
         _currentHealth = _maxHealth;
+        //healthBar.SetMaxHealth(_maxHealth);
+
     }
 
     public int CurrentHealth {

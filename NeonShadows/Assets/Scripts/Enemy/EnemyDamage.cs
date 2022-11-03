@@ -7,13 +7,14 @@ public class EnemyDamage : MonoBehaviour
 {
     public float health;
     public Text textHealth;
-    public Image _healthBar;
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         textHealth.text = "Health:" + health + "/100";
-        _healthBar = GetComponent<Image>();
+        //healthBar.SetMaxHealth(health);
+
     }
 
     // Update is called once per frame
