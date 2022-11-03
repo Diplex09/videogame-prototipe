@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public float health;
+    public int health;
     public Text textHealth;
     public HealthBar healthBar;
 
@@ -13,7 +13,7 @@ public class EnemyDamage : MonoBehaviour
     void Start()
     {
         textHealth.text = "Health:" + health + "/100";
-        //healthBar.SetMaxHealth(health);
+        healthBar.SetMaxHealth(health);
 
     }
 
@@ -27,6 +27,7 @@ public class EnemyDamage : MonoBehaviour
         if(other.CompareTag("Enemy")) {
             health = health - 15;
             textHealth.text = "Health:" + health + "/100";
+            healthBar.SetHealth(health);
             //_healthBar.fillAmount = 50 / 100;
             
         }
