@@ -1,4 +1,4 @@
-name: Build for Windows
+name: 🏗️ Build for Windows 
 
 on:
   push:
@@ -11,25 +11,25 @@ env:
 jobs:
 
   buildWindows:
-    name: Build for Windows
+    name: 🏗️ Build for Windows 
     runs-on: ubuntu-latest
     
     steps:
     
-      - name: Code checkout
+      - name: 📝 Code checkout
         uses: actions/checkout@2
         
-      - name: LFS files creation
+      - name: 📁 LFS files creation
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
         
-      - name: Restaurar cache (si usan LFS)
+      - name: 🔙 Restore cache (if using LFS)
         uses: actions/cache@2
         id: lfs-cache
         with:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
           
-      - name: Git pull LFS
+      - name: 📥 Git pull LFS
         run: |
           git lfs pull
           git add .
@@ -44,12 +44,12 @@ jobs:
             Library-build-
             Library-
             
-      - name: Generate Windows build
+      - name: 🧱 Generate Windows build
         uses: game-ci/unity-builder@v2
         with:
           targetPlatform: StandaloneWindows64
           
-      - name: Upload Windows build
+      - name: 📨 Upload Windows build
         uses: actions/upload-artifact@2
         with:
           name: build-StandaloneWindows64
