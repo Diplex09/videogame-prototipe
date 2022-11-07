@@ -1,4 +1,4 @@
-name: 🏗️ Build for Windows 
+name: ⚒ Generate builds
 
 on:
   push:
