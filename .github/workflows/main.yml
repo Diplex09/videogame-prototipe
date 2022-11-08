@@ -48,6 +48,7 @@ jobs:
         uses: game-ci/unity-builder@v2
         with:
           targetPlatform: StandaloneWindows64
+          projectPath: NeonShadows
           
       - name: 📨 Upload Windows build
         uses: actions/upload-artifact@v2
