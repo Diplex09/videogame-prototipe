@@ -17,13 +17,13 @@ jobs:
     steps:
     
       - name: 📝 Code checkout
-        uses: actions/checkout@2
+        uses: actions/checkout@v2
         
       - name: 📁 LFS files creation
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
         
       - name: 🔙 Restore cache (if using LFS)
-        uses: actions/cache@2
+        uses: actions/cache@v2
         id: lfs-cache
         with:
           path: .git/lfs
@@ -35,8 +35,8 @@ jobs:
           git add .
           git reset --hard
           
-      - name: Restaurar cache de library
-        uses: actions/cache@2
+      - name: 🔙 Restaurar cache de library
+        uses: actions/cache@v2
         with:
           path: Library
           key: Library-build-StandaloneWindows64
@@ -50,7 +50,7 @@ jobs:
           targetPlatform: StandaloneWindows64
           
       - name: 📨 Upload Windows build
-        uses: actions/upload-artifact@2
+        uses: actions/upload-artifact@v2
         with:
           name: build-StandaloneWindows64
           path: build/StandaloneWindows64
