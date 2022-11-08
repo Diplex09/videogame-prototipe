@@ -1,41 +1,38 @@
-name: ⚒ Generate builds
+name: Build de Windows
 
-on:
-  push:
-    branches:
-      - 'main'
-      
+on: push
+
 env: 
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-  
+
 jobs:
 
-  buildWindows:
-    name: 🏗️ Build for Windows 
+  buildWindows: 
+    name: Build para Windows
     runs-on: ubuntu-latest
-    
+
     steps:
-    
-      - name: 📝 Code checkout
+
+      - name: Checkout de código
         uses: actions/checkout@v2
-        
-      - name: 📁 LFS files creation
+
+      - name: Creación de lista de archivos lfs
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-        
-      - name: 🔙 Restore cache (if using LFS)
+
+      - name: Restaurar cache (si usan LFS)
         uses: actions/cache@v2
         id: lfs-cache
         with:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-          
-      - name: 📥 Git pull LFS
+
+      - name: Git pull LFS
         run: |
           git lfs pull
           git add .
           git reset --hard
-          
-      - name: 🔙 Restaurar cache de library
+      
+      - name: Restaurar cache de library
         uses: actions/cache@v2
         with:
           path: Library
@@ -43,14 +40,12 @@ jobs:
           restore-keys: |
             Library-build-
             Library-
-            
-      - name: 🧱 Generate Windows build
-        uses: game-ci/unity-builder@v2
+      
+      - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: StandaloneWindows64
-          
-      - name: 📨 Upload Windows build
-        uses: actions/upload-artifact@v2
+
+      - uses: actions/upload-artifact@v2
         with:
           name: build-StandaloneWindows64
           path: build/StandaloneWindows64
