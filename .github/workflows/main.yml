@@ -35,7 +35,7 @@ jobs:
       - name: Restaurar cache de library
         uses: actions/cache@v2
         with:
-          path: Library
+          path: NeonShadows/Library
           key: Library-build-StandaloneWindows64
           restore-keys: |
             Library-build-
