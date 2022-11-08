@@ -21,4 +21,4 @@ Some references are :
 ## Team
 - [Aldo Degollado](https://github.com/Diplex09): `Gameplay Programmer` / `AI Programmer` / `UI Artist` / `Game Designer` / `Producer`
 - [David De La Llave](https://github.com/David12081): `Gameplay Programmer` / `Conceptual Artist` / `Storyboard Artist` / `Animation Artist`
-- [Diego Velázquez](https://github.com/DiegoVelazqz): `Gameplay Programmer` / `VFX Artist`
+- [Diego Velázquez](https://github.com/DiegoVelazqz): `Gameplay Programmer` / `VFX Artist` / `UI Artist` / `Level Designer`
