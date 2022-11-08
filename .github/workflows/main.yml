@@ -1,51 +1,56 @@
-name: Build de Windows
+name: ⚒ Generate builds
 
-on: push
-
+on:
+  push:
+    branches:
+      - 'main'
+      
 env: 
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-
+  
 jobs:
 
-  buildWindows: 
-    name: Build para Windows
+  buildWindows:
+    name: 🏗️ Build for Windows 
     runs-on: ubuntu-latest
-
+    
     steps:
-
-      - name: Checkout de código
+    
+      - name: 📝 Code checkout
         uses: actions/checkout@v2
-
-      - name: Creación de lista de archivos lfs
+        
+      - name: 📁 LFS files creation
         run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restaurar cache (si usan LFS)
+        
+      - name: 🔙 Restore cache (if using LFS)
         uses: actions/cache@v2
         id: lfs-cache
         with:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
-      - name: Git pull LFS
+          
+      - name: 📥 Git pull LFS
         run: |
           git lfs pull
           git add .
           git reset --hard
-      
-      - name: Restaurar cache de library
+          
+      - name: 🔙 Restaurar cache de library
         uses: actions/cache@v2
         with:
-          path: NeonShadows/Library
+          path: Library
           key: Library-build-StandaloneWindows64
           restore-keys: |
             Library-build-
             Library-
-      
-      - uses: game-ci/unity-builder@v2
+            
+      - name: 🧱 Generate Windows build
+        uses: game-ci/unity-builder@v2
         with:
           targetPlatform: StandaloneWindows64
-
-      - uses: actions/upload-artifact@v2
+          
+      - name: 📨 Upload Windows build
+        uses: actions/upload-artifact@v2
         with:
           name: build-StandaloneWindows64
           path: build/StandaloneWindows64
