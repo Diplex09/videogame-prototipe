@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8913989605122884822}
   - component: {fileID: 6439758982269119988}
   - component: {fileID: 1136477806}
+  - component: {fileID: 7032649622382086669}
   m_Layer: 0
   m_Name: EnemyPatroll
   m_TagString: Enemy
@@ -186,6 +187,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7032649622382086669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391920103602742030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8682f92a80a874583a35d3fc31242b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1200109841199678209}
+  _knockbackVel: 2
+  _knockbackMult: 10
 --- !u!1 &4391920103844060945
 GameObject:
   m_ObjectHideFlags: 0

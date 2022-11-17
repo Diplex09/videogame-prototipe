@@ -8,6 +8,7 @@ public class EnemyDamage : MonoBehaviour
     public int health;
     public Text textHealth;
     public HealthBar healthBar;
+    [SerializeField] Knockback _knockback;
 
     // Start is called before the first frame update
     void Start()
@@ -20,16 +21,19 @@ public class EnemyDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Enemy")) {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
             health = health - 15;
             textHealth.text = "Health:" + health + "/100";
             healthBar.SetHealth(health);
+            _knockback.ApplyKnockback(other.transform);
             //_healthBar.fillAmount = 50 / 100;
-            
+
         }
     }
 
