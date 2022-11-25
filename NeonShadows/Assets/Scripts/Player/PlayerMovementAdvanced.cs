@@ -11,6 +11,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
     [SerializeField] private float _desiredMoveSpeed;
     [SerializeField] private float _lastDesiredMoveSpeed;
     [SerializeField] private float _walkSpeed;
+    [SerializeField] Animator _anim;
+    [SerializeField] CapsuleCollider _capsuleCollider;
     
     /* public float WalkSpeed {
         get => _walkSpeed;
@@ -54,7 +56,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private float _playerHeight;
     [SerializeField] private LayerMask _whatIsGround;
-    [SerializeField] private bool _grounded;
+    [SerializeField] public bool _grounded;
     public bool Grounded {
         get => _grounded;
         set => _grounded = value;
@@ -71,14 +73,14 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     [SerializeField] private Transform _orientation;
 
-    private float horizontalInput;
-    private float verticalInput;
+    public float horizontalInput;
+    public float verticalInput;
 
     private Vector3 _moveDirection;
 
     [SerializeField] private Rigidbody _rb;
 
-    [SerializeField] private MovementState _state;
+    [SerializeField] public MovementState _state;
     public enum MovementState
     {
         freeze,
@@ -156,7 +158,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
         // start crouch
         if (Input.GetKeyDown(_crouchKey) && horizontalInput == 0 && verticalInput == 0)
         {
-            transform.localScale = new Vector3(transform.localScale.x, _crouchYScale, transform.localScale.z);
+            //transform.localScale = new Vector3(transform.localScale.x, _crouchYScale, transform.localScale.z);
+            _capsuleCollider.center = new Vector3(0, -0.28f, 0);
+            _capsuleCollider.height = 1.25f;
             // ! AddForce no se debe de ejecutar dentro de Update
             _rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
@@ -166,8 +170,9 @@ public class PlayerMovementAdvanced : MonoBehaviour
         // stop crouch
         if (Input.GetKeyUp(_crouchKey))
         {
-            transform.localScale = new Vector3(transform.localScale.x, _startYScale, transform.localScale.z);
-
+            //transform.localScale = new Vector3(transform.localScale.x, _startYScale, transform.localScale.z);
+            _capsuleCollider.center = Vector3.zero;
+            _capsuleCollider.height = 1.77f;
             crouching = false;
         }
     }
@@ -218,7 +223,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         else if (sliding)
         {
             _state = MovementState.sliding;
-            transform.localScale = new Vector3(transform.localScale.x, _crouchYScale, transform.localScale.z);
+            //transform.localScale = new Vector3(transform.localScale.x, _crouchYScale, transform.localScale.z);
 
             // increase speed by one every second
             if (OnSlope() && _rb.velocity.y < 0.1f)
@@ -317,7 +322,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         if (restricted) return;
 
         // calculate movement direction
-        _moveDirection = _orientation.forward * verticalInput + _orientation.right * horizontalInput;
+        _moveDirection = (_orientation.forward * verticalInput) + (_orientation.right * horizontalInput);
 
         // on slope
         if (OnSlope() && !_exitingSlope)
@@ -372,6 +377,8 @@ public class PlayerMovementAdvanced : MonoBehaviour
         _rb.velocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
 
         _rb.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
+
+        _anim.SetTrigger("jump");
     }
     private void ResetJump()
     {

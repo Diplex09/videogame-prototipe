@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ButtonActions : MonoBehaviour
 {
-    public void OnClickSingleplayer()
+    // Start is called before the first frame update
+    void Start()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("FirstLevel");
+        
     }
 
-    public void OnClickMultiplayer()
+    // Update is called once per frame
+    void Update()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MultiplayerMinigame");
+        
     }
 }

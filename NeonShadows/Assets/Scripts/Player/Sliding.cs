@@ -12,6 +12,7 @@ public class Sliding : MonoBehaviour
     public Transform playerObj;
     private Rigidbody rb;
     private PlayerMovementAdvanced pm;
+    [SerializeField] CapsuleCollider _capsuleCollider;
 
     [Header("Sliding")]
     public float maxSlideTime;
@@ -59,10 +60,13 @@ public class Sliding : MonoBehaviour
 
         pm.sliding = true;
 
-        playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
+        //playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
         rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 
         slideTimer = maxSlideTime;
+
+        _capsuleCollider.center = new Vector3(0, -0.28f, 0);
+        _capsuleCollider.height = 1.25f;
     }
 
     private void SlidingMovement()
@@ -91,6 +95,9 @@ public class Sliding : MonoBehaviour
     {
         pm.sliding = false;
 
-        playerObj.localScale = new Vector3(playerObj.localScale.x, startYScale, playerObj.localScale.z);
+        _capsuleCollider.center = Vector3.zero;
+        _capsuleCollider.height = 1.77f;
+
+        //playerObj.localScale = new Vector3(playerObj.localScale.x, startYScale, playerObj.localScale.z);
     }
 }

@@ -17,8 +17,6 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         Combos();
-
-        Debug.Log(_activeAttack);
     }
 
     void Combos()

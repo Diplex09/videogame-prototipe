@@ -28,8 +28,8 @@ public class WallRunningAdvanced : MonoBehaviour
     public float minJumpHeight;
     private RaycastHit leftWallhit;
     private RaycastHit rightWallhit;
-    private bool wallLeft;
-    private bool wallRight;
+    public bool wallLeft;
+    public bool wallRight;
 
     [Header("Exiting")]
     private bool exitingWall;
