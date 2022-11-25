@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class ButtonActions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnClickSingleplayer()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("FirstLevel");
