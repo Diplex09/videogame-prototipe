@@ -8,7 +8,6 @@ public class MakeDamage : MonoBehaviour
 {
     [SerializeField] private int _damagePower = 10;
     [SerializeField] private string _tagToDamage = "Enemy";
-    [SerializeField] private UnityEvent OnTrigger;
     [SerializeField] private PlayerAttack _playerAttack;
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +20,7 @@ public class MakeDamage : MonoBehaviour
                 if (healthSystem.enabled)
                 {
                     healthSystem.ReceiveDamage(_damagePower);
-                    OnTrigger?.Invoke();
+                    Debug.Log("Hola");
                 }
             }
             else

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Animator _anim;
+    [SerializeField] private GameObject _hitbox;
     private int _combo;
     private bool _attacking;
     private bool _activeAttack;
@@ -42,10 +43,12 @@ public class PlayerAttack : MonoBehaviour
         _attacking = false;
         _combo = 0;
         _activeAttack = false;
+        _hitbox.SetActive(false);
     }
 
     public void EnableAttack()
     {
         _activeAttack = true;
+        _hitbox.SetActive(true);
     }
 }
