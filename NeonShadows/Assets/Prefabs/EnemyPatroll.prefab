@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6439758982269119988}
   - component: {fileID: 1136477806}
   - component: {fileID: 7032649622382086669}
+  - component: {fileID: 1401556444}
   m_Layer: 0
   m_Name: EnemyPatroll
   m_TagString: Enemy
@@ -202,6 +203,20 @@ MonoBehaviour:
   _rigidbody: {fileID: 1200109841199678209}
   _knockbackVel: 2
   _knockbackMult: 10
+--- !u!114 &1401556444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391920103602742030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bf65dcb76af5d4a882155e4249d175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _knockback: {fileID: 7032649622382086669}
+  _damagePower: 2
 --- !u!1 &4391920103844060945
 GameObject:
   m_ObjectHideFlags: 0

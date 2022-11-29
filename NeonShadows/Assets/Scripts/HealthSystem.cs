@@ -14,8 +14,6 @@ public class HealthSystem : MonoBehaviour
 
     public void Start() {
         _currentHealth = _maxHealth;
-        //healthBar.SetMaxHealth(_maxHealth);
-
     }
 
     public int CurrentHealth {
