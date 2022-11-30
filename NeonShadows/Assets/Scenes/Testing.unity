@@ -6692,10 +6692,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPatroll
       objectReference: {fileID: 0}
-    - target: {fileID: 4391920103602742030, guid: 4ca35c5416ace0640976a1d227d6b5ef, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7009124009382873373, guid: 4ca35c5416ace0640976a1d227d6b5ef, type: 3}
       propertyPath: _waypoints.Array.data[0]
       value: 
@@ -6791,7 +6787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967944280887252664, guid: df773bec0eef35849953e0d8ceca5f0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df773bec0eef35849953e0d8ceca5f0d, type: 3}
