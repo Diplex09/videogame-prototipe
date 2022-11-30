@@ -25,12 +25,16 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
         });
     }
 
-    public void OnClickHostButton() {
-        StartGame(GameMode.Host);
-    }
-
-    public void OnClickJoinButton() {
-        StartGame(GameMode.Client);
+    private void OnGUI() {
+        if (_runner == null) {
+            if (GUI.Button(new Rect(0, 0, 200, 40), "Host")) {
+                StartGame(GameMode.Host);
+            }
+            
+            if (GUI.Button(new Rect(0, 40, 200, 40), "Join")) {
+                StartGame(GameMode.Client);
+            }
+        }
     }
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player) {
