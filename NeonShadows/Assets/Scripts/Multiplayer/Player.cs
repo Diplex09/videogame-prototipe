@@ -88,4 +88,12 @@ public class Player : NetworkBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Deathbox"))
+        {
+            transform.position = new Vector3(0, 3, 0);
+        }
+    }
 }
