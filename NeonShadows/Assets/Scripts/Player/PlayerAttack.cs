@@ -6,6 +6,9 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Animator _anim;
     [SerializeField] private GameObject _hitbox;
+    [SerializeField] private GameObject _slash1;
+    [SerializeField] private GameObject _slash2;
+    [SerializeField] private GameObject _slash3;
     private int _combo;
     private bool _attacking;
     private bool _activeAttack;
@@ -50,5 +53,27 @@ public class PlayerAttack : MonoBehaviour
     {
         _activeAttack = true;
         _hitbox.SetActive(true);
+    }
+
+    public void Slash1()
+    {
+        _slash1.SetActive(true);
+    }
+
+    public void Slash2()
+    {
+        _slash2.SetActive(true);
+    }
+
+    public void Slash3()
+    {
+        _slash3.SetActive(true);
+    }
+
+    public void DisableSlash()
+    {
+        _slash1.SetActive(false);
+        _slash2.SetActive(false);
+        _slash3.SetActive(false);
     }
 }
