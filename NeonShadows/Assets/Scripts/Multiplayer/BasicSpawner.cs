@@ -8,7 +8,10 @@ using UnityEngine.SceneManagement;
 public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     private NetworkRunner _runner;
-    [SerializeField] private NetworkPrefabRef _playerPrefab;
+    [SerializeField] private NetworkPrefabRef _player1Prefab;
+    [SerializeField] private NetworkPrefabRef _player2Prefab;
+    [SerializeField] private NetworkPrefabRef _player3Prefab;
+    [SerializeField] private NetworkPrefabRef _player4Prefab;
     Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
     [SerializeField] private Boolean _mouseButton0;
     [SerializeField] private Boolean _mouseButton1;
@@ -35,9 +38,30 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player) {
         if(runner.IsServer) {
+            int count = _spawnedCharacters.Count;
+            Debug.Log(count);
             Vector3 spawnPosition = new Vector3(0, 2, 0);
             Quaternion spawnRotation = Quaternion.identity;
-            NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, spawnRotation, player);
+            NetworkPrefabRef prefabToSpawn = _player1Prefab;
+            switch (count) {
+                case 0:
+                    spawnPosition = new Vector3(-8, 2, 8);
+                    prefabToSpawn = _player1Prefab;
+                    break;
+                case 1:
+                    spawnPosition = new Vector3(8, 2, 8);
+                    prefabToSpawn = _player2Prefab;
+                    break;
+                case 2:
+                    spawnPosition = new Vector3(-8, 2, -8);
+                    prefabToSpawn = _player3Prefab;
+                    break;
+                case 3:
+                    spawnPosition = new Vector3(8, 2, -8);
+                    prefabToSpawn = _player4Prefab;
+                    break;
+            }
+            NetworkObject networkPlayerObject = runner.Spawn(prefabToSpawn, spawnPosition, spawnRotation, player);
             _spawnedCharacters.Add(player, networkPlayerObject);
         }
     }

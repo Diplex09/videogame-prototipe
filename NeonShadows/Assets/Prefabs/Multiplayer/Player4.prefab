@@ -56,7 +56,7 @@ MonoBehaviour:
   AoiPositionSource: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: b5ab90028921dfe4897a78dba158111d
+    RawGuidValue: abd3f90909f1fbd458ce617a6e35e0ae
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 1415900357490098768}
@@ -129,10 +129,8 @@ MonoBehaviour:
   _interpolationDataSource: 0
   _characterControllerPrototype: {fileID: 1415900357490098768}
   _movementSpeed: 5
-  _ballPrefab: {fileID: 980349594264618675, guid: 35265028cd39fc048b291c5bd5db9985, type: 3}
-  _physxBallPrefab: {fileID: 8589680569116173590, guid: 3609f337467257a4482a68621f1257af, type: 3}
-  _Spawned:
-    _value: 0
+  _ballPrefab: {fileID: 6078577359986728764, guid: 9e3db1339c45d1341bfae9744802d0a8, type: 3}
+  _physxBallPrefab: {fileID: 762417903181046859, guid: 6555354a8795e844f99c2cc9870d201b, type: 3}
 --- !u!1 &5183036425749440272
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +238,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: fba92da5f144b7f41ae77994fc525e73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -551,8 +551,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a02a2083b46fa934cb74b565db667579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab:
+  _player1Prefab:
     RawGuidValue: 98118dd4269e01843938d80906a364a9
+  _player2Prefab:
+    RawGuidValue: f6c13bbbb637e3c4a9e188849105c013
+  _player3Prefab:
+    RawGuidValue: a69ef52d760b2654e9e7e756c743fc36
+  _player4Prefab:
+    RawGuidValue: abd3f90909f1fbd458ce617a6e35e0ae
   _mouseButton0: 0
   _mouseButton1: 0
 --- !u!4 &906940742

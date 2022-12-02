@@ -14,12 +14,12 @@ public class Player : NetworkBehaviour
     [SerializeField] private PhysxBall _physxBallPrefab;
     private Vector3 _forward;
     [Networked] private TickTimer _delay { get; set; }
-    [Networked (OnChanged = nameof(OnBallSpawned))]
+    // [Networked (OnChanged = nameof(OnBallSpawned))]
     public NetworkBool Spawned { get; set; }
 
-    public static void OnBallSpawned(Changed<Player> changed) {
+    /* public static void OnBallSpawned(Changed<Player> changed) {
         changed.Behaviour._material.color = Color.white;
-    }
+    } */
     private Material _material;
     public Material Material {
         get {
@@ -94,7 +94,13 @@ public class Player : NetworkBehaviour
     {
         if (other.gameObject.CompareTag("Deathbox"))
         {
+            _characterControllerPrototype.Move(Vector3.zero);
+            Runner.transform.position = new Vector3(0, 3, 0);
             transform.position = new Vector3(0, 3, 0);
+            transform.position = new Vector3(0, 3, 0);
+            transform.position = new Vector3(0, 3, 0);
+            transform.position = new Vector3(0, 3, 0);
+            //disable rigidbody gravity
         }
     }
 }
