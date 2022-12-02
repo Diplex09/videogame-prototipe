@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1415900357490098768}
   - component: {fileID: 2157634205958257701}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
   AoiPositionSource: {fileID: 0}
   Flags: 2305
   NetworkGuid:
-    RawGuidValue: 98118dd4269e01843938d80906a364a9
+    RawGuidValue: e426b68d00cd4c642bd159a7f496250c
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 1415900357490098768}
