@@ -30,7 +30,7 @@ public class MakeDamage : MonoBehaviour
             {
                 if (knockback.enabled)
                 {
-                    knockback.ApplyKnockback(this.transform);
+                    knockback.ApplyKnockback(_playerAttack.transform);
                 }
             }
             else

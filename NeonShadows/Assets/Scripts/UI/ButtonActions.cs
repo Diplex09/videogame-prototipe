@@ -8,7 +8,7 @@ public class ButtonActions : MonoBehaviour
     public void OnSingleplayerButtonClick()
     {
         // Load singleplayer scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("FirstLevel");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Demo");
     }
 
     // On multiplayer button click

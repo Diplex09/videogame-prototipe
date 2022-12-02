@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth: 30
   _maxHealth: 30
+  _material: {fileID: 2100000, guid: b3ad386aba28716448079dcf67d7aede, type: 2}
   OnReceiveDamage:
     m_PersistentCalls:
       m_Calls: []
