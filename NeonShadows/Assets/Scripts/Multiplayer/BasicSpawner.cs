@@ -43,26 +43,40 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
             Vector3 spawnPosition = new Vector3(0, 2, 0);
             Quaternion spawnRotation = Quaternion.identity;
             NetworkPrefabRef prefabToSpawn = _player1Prefab;
+            NetworkBool canSpawn = false;
             switch (count) {
                 case 0:
                     spawnPosition = new Vector3(-8, 2, 8);
                     prefabToSpawn = _player1Prefab;
+                    canSpawn = true;
                     break;
                 case 1:
                     spawnPosition = new Vector3(8, 2, 8);
                     prefabToSpawn = _player2Prefab;
+                    canSpawn = true;
                     break;
                 case 2:
                     spawnPosition = new Vector3(-8, 2, -8);
                     prefabToSpawn = _player3Prefab;
+                    canSpawn = true;
                     break;
                 case 3:
                     spawnPosition = new Vector3(8, 2, -8);
                     prefabToSpawn = _player4Prefab;
+                    canSpawn = true;
+                    break;
+                default:
+                    Debug.Log("Too many players");
+                    canSpawn = false;
                     break;
             }
-            NetworkObject networkPlayerObject = runner.Spawn(prefabToSpawn, spawnPosition, spawnRotation, player);
-            _spawnedCharacters.Add(player, networkPlayerObject);
+
+            if (canSpawn) {
+                NetworkObject networkPlayerObject = runner.Spawn(prefabToSpawn, spawnPosition, spawnRotation, player);
+                _spawnedCharacters.Add(player, networkPlayerObject);
+            } else {
+                // Disconnect player
+            }
         }
     }
 

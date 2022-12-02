@@ -64,7 +64,6 @@ public class Player : NetworkBehaviour
     {
         if(GetInput(out NetworkInputData inputData)) {
             inputData.Direction.Normalize();
-            Debug.Log(inputData.Direction);
             _characterControllerPrototype.Move(inputData.Direction * Runner.DeltaTime * _movementSpeed);
 
             if (inputData.Direction.sqrMagnitude > 0) {
@@ -94,13 +93,20 @@ public class Player : NetworkBehaviour
     {
         if (other.gameObject.CompareTag("Deathbox"))
         {
+            //Return character to platform
+            /*
+            _characterControllerPrototype.gravity = 0;
             _characterControllerPrototype.Move(Vector3.zero);
             Runner.transform.position = new Vector3(0, 3, 0);
             transform.position = new Vector3(0, 3, 0);
-            transform.position = new Vector3(0, 3, 0);
-            transform.position = new Vector3(0, 3, 0);
-            transform.position = new Vector3(0, 3, 0);
-            //disable rigidbody gravity
+            _characterControllerPrototype.gravity = -20;
+            */
+            Runner.Despawn(Object);
         }
+    }
+
+    public void Knockback() {
+        Debug.Log("Knockback! x2");
+        _characterControllerPrototype.Move(-_forward * Runner.DeltaTime * _movementSpeed * 2);
     }
 }

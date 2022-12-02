@@ -130,7 +130,7 @@ MonoBehaviour:
   _characterControllerPrototype: {fileID: 1415900357490098768}
   _movementSpeed: 5
   _ballPrefab: {fileID: 6078577359986728764, guid: 9e3db1339c45d1341bfae9744802d0a8, type: 3}
-  _physxBallPrefab: {fileID: 762417903181046859, guid: 6555354a8795e844f99c2cc9870d201b, type: 3}
+  _physxBallPrefab: {fileID: -8182619155579477879, guid: 83333927de9a77b4195e708b597846ff, type: 3}
 --- !u!1 &5183036425749440272
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 549756294325651445}
   - component: {fileID: 3824142484828139473}
   m_Layer: 0
-  m_Name: Mesh
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

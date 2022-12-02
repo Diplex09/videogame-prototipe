@@ -9,6 +9,14 @@ public class PhysxBall : NetworkBehaviour
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private int _force;
     [Networked] private TickTimer _life { get; set; }
+    [SerializeField] private AudioClip _shootSound;
+    [SerializeField] private AudioSource _audioSource;
+
+    private void AwakeNetworked()
+    {
+        //Play shoot sound
+        _audioSource.PlayOneShot(_shootSound);
+    }
 
     public void Init(Vector3 playerForward) {
         _life = TickTimer.CreateFromSeconds(Runner, _lifeTime);
