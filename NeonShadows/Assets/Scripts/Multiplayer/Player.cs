@@ -64,6 +64,7 @@ public class Player : NetworkBehaviour
     {
         if(GetInput(out NetworkInputData inputData)) {
             inputData.Direction.Normalize();
+            Debug.Log(inputData.Direction);
             _characterControllerPrototype.Move(inputData.Direction * Runner.DeltaTime * _movementSpeed);
 
             if (inputData.Direction.sqrMagnitude > 0) {
